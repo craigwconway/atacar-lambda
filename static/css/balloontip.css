@@ -1,0 +1,23 @@
+.balloonstyle{
+position:absolute;
+top: -500px;
+left: 0;
+padding: 5px;
+visibility: hidden;
+border:1px solid #4c4c4c;
+font:normal 12px Verdana;
+line-height: 18px;
+z-index: 100;
+background-color: #7f0000;
+width: 200px;
+color: #fff;
+}
+
+#arrowhead{
+z-index: 99;
+position:absolute;
+top: -500px;
+left: 0;
+visibility: hidden;
+}
+

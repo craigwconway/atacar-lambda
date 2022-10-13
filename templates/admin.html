@@ -1,0 +1,165 @@
+<html>
+
+<head>
+    <title>Admin</title>
+    <style>
+        body {
+            background-color: #000;
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+            font-size: 12px;
+            color: #fff;
+
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #b11302;
+        }
+
+        label {
+            color: #b11302;
+            display: inline-block;
+            width: 80px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        #inputs {
+            margin: 5 5 5 5px;
+            padding: 5 5 5 5px;
+            font-size: 11;
+            border: solid 1px #4c4c4c;
+        }
+
+        .item {
+            float: left;
+            margin: 5 5 5 5px;
+            padding: 5 5 5 5px;
+            font-size: 11;
+            text-align: center;
+            width: 170px;
+            height: 200px;
+            border: solid 1px #4c4c4c;
+        }
+
+        a {
+            color: #b11302;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        a.admin {
+            color: yellow;
+            text-decoration: none;
+        }
+
+        a.admin:hover {
+            color: white;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1><a href="http://atacar.net">Ata Car</a></h1>
+
+    <h3>Admin Page</h3>
+
+    <h4>{{ msg }}</h4>
+
+    <form method="post" id="theForm">
+
+        <div id="inputs">
+            <input type="hidden" name="pw" value="{{pw}}">
+            <input type="hidden" name="cmd" id="cmd" value="create">
+            <input type="hidden" name="id" id="id">
+            <input type="hidden" name="thumbnail">
+            <!-- <label>inventory_id</label> -->
+            <input type="hidden" name="inventory_id" id="inventory_id"><br>
+            <label>year</label>
+            <input type="text" name="year" id="year"><br>
+            <label>make</label>
+            <input type="text" name="make" id="make"><br>
+            <label>model</label>
+            <input type="text" name="model" id="model"><br>
+            <label>vin</label>
+            <input type="text" name="vin" id="vin"><br>
+            <label>color</label>
+            <input type="text" name="color" id="color"><br>
+            <label>mileage</label>
+            <input type="text" name="mileage" id="mileage"><br>
+            <label>price</label>
+            <input type=" text" name="price" id="price"><br>
+            <label>available <br> / sold</label>
+            <input type="text" name="status" id="status" value="available"><br>
+            <label>thumbnail</label>
+            <input type="text" name="path" id="path"><br>
+            <label>description</label><br>
+            <textarea type="text" name="description" id="description" rows="10" cols="90"></textarea>
+            <br>
+            <input type="submit" id="submitb" value="Create">
+            <input type="button" id="reset" value="Reset" onClick="window.location.reload(true)">
+        </div>
+
+        <div id="list">
+            {% for item in items %}
+            <div class="item">
+                <a href="#{{ item.id }}">
+                    <img src="{{ item.path }}" border="0" width="160" height="120"></a>
+                <br>
+                <a href="#{{ item.id }}">
+                    {{ item.year }} {{ item.make }} {{ item.model }} </a>
+                <br>
+                <input type="button" onclick="doUpdate({{ item.id }})" value="Edit">
+                <input type="button" onclick="doDelete({{ item.id }})" value="Delete">
+            </div>
+            {% endfor %}
+        </div>
+    </form>
+
+    <script>
+
+        function doDelete(id) {
+            if (confirm("Are you sure?")) {
+                document.getElementById("cmd").value = "delete";
+                document.getElementById("id").value = id;
+                document.getElementById("theForm").submit();
+            }
+            return false;
+        }
+
+        var items = {{ data }}
+
+        function doUpdate(id) {
+            document.getElementById("id").value = id;
+            document.getElementById("cmd").value = "update";
+            document.getElementById("submitb").value = "Update";
+            window.scrollTo(0, 0);
+            for (var i = 0; i < items.length; i++) {
+                if (id == items[i].id) {
+                    document.getElementById("inventory_id").value = items[i].inventory_id;
+                    document.getElementById("year").value = items[i].year;
+                    document.getElementById("make").value = items[i].make;
+                    document.getElementById("model").value = items[i].model;
+                    document.getElementById("vin").value = items[i].vin;
+                    document.getElementById("color").value = items[i].color;
+                    document.getElementById("mileage").value = items[i].mileage;
+                    document.getElementById("price").value = items[i].price;
+                    document.getElementById("status").value = items[i].status;
+                    document.getElementById("path").value = items[i].path;
+                    document.getElementById("description").value = items[i].description;
+                    break;
+                }
+            }
+            return false;
+        }
+    </script>
+
+</body>
+
+</html>

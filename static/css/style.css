@@ -1,0 +1,230 @@
+#dolphincontainer {
+	position: relative;
+	border-bottom: 2px solid black;
+	color: #000;
+	background: #000;
+	width: 100%;
+	font-family: Helvetica, Arial, Verdana, sans-serif;
+	padding-top: 20px;
+}
+
+#dolphinnav {
+	position: relative;
+	height: 33px;
+	font-size: 12px;
+	text-transform: uppercase;
+	font-weight: bold;
+	background: #000 url(../images/dolphin_bg.gif) repeat-x bottom left;
+	padding: 0 0 0 20px;
+}
+
+#dolphinnav ul {
+	margin: 0;
+	padding: 0 0 0 0;
+	list-style-type: none;
+	width: auto;
+	float: left;
+}
+
+#dolphinnav ul li {
+	display: block;
+	float: left;
+	margin: 0 1px;
+}
+
+#dolphinnav ul li a {
+	display: block;
+	float: left;
+	color: #FFF;
+	text-decoration: none;
+	padding: 0 0 0 20px;
+	height: 33px;
+}
+
+#dolphinnav ul li a span {
+	padding: 12px 20px 0 0;
+	height: 21px;
+	float: left;
+}
+
+#dolphinnav ul li a:hover {
+	color: #fff;
+	background: transparent url(../images/dolphin_bg-OVER.gif) repeat-x bottom left;
+}
+
+#dolphinnav ul li a:hover span {
+	display: block;
+	width: auto;
+	cursor: pointer;
+}
+
+#dolphinnav ul li a.current,
+#dolphinnav ul li a.current:hover {
+	color: #fff;
+	background: #fff url(../images/dolphin_left-ON.gif) no-repeat top left;
+	line-height: 275%;
+}
+
+#dolphinnav ul li a.current span {
+	display: block;
+	padding: 0 20px 0 0;
+	width: auto;
+	background: #fff url(../images/dolphin_right-ON.gif) no-repeat top right;
+	height: 33px;
+}
+
+#dolphin_inner {
+	color: white;
+	padding: 5px;
+	font-size: 80%;
+	height: 1em
+}
+
+#dolphin_inner a:link,
+#dolphin_inner a:visited,
+#dolphin_inner a:active {
+	color: white
+}
+
+#dolphin_inner a:hover {
+	color: fff
+}
+
+.innercontent {
+	display: none;
+}
+
+.header {
+	margin-top: 0px;
+	margin-left: 0px;
+	background: #000 url(../images/header-bg.jpg) repeat-x top left;
+}
+
+body {
+	margin-top: 0px;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-bottom: 10px;
+	padding-bottom: 10px;
+	background-color: #000000;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #b11302
+}
+
+label {
+	color: #b11302;
+	display: inline-block;
+	width: 80px;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+#inputs {
+	margin: 5 5 5 5px;
+	padding: 5 5 5 5px;
+	font-size: 11;
+	border: solid 1px #4c4c4c;
+}
+
+
+h1 {
+	font-size: 24px;
+	color: #b11302;
+}
+
+h2 {
+	font-size: 18px;
+}
+
+.item {
+	float: left;
+	margin: 5 5 5 5px;
+	padding: 5 5 5 5px;
+	font-size: 11;
+	text-align: center;
+	width: 170px;
+	height: 200px;
+	border: solid 1px #4c4c4c;
+}
+
+.textContent {
+	border: solid 1px #4c4c4c;
+	width: 500px;
+	margin: 30 5 5 5px;
+	padding: 5 5 5 5px;
+	font-size: 14px;
+}
+
+.loancalc {
+	text-align: left;
+	border: solid 1px #4c4c4c;
+	width: 300px;
+	margin: 5 5 5 5px;
+	padding: 5 5 5 5px;
+}
+
+#footer {
+	clear: both;
+	text-align: center;
+	width: 100%;
+	padding-top: 25px;
+	font-size: 12px;
+}
+
+
+
+.row0 {
+	background-color: #000000
+}
+
+.row1 {
+	background-color: #191919
+}
+
+.clickable {
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+
+.formrow {
+	clear: both;
+}
+
+.formlabel {
+	float: left;
+	width: 90px;
+}
+
+.forminput {
+	size: 190px;
+}
+
+a {
+	color: #b11302;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #fff;
+	text-decoration: underline;
+}
+
+a.admin {
+	color: yellow;
+	text-decoration: none;
+}
+
+a.admin:hover {
+	color: white;
+	text-decoration: underline;
+}
+
+input select option {
+	background-color: #FFFFFF;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	margin: 2 2 2 2px;
+	border: #FFFFFF solid 1px;
+}

@@ -1,0 +1,15 @@
+{
+    "pw": "password",
+    "cmd": "create",
+    "inventory_id": "",
+    "year": "69",
+    "make": "VW",
+    "model": "TheThing",
+    "vin": "00001",
+    "color": "yellow",
+    "mileage": "high",
+    "price": "high",
+    "status": "available",
+    "path": "http://i129.photobucket.com/albums/p204/tomask2/02%20vw%20jetta%20gls/1.jpg",
+    "description": "its new!"
+}

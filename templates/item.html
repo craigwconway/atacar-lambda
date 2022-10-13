@@ -1,0 +1,72 @@
+<html>
+
+<head>
+    <title>Ata Car</title>
+    <script type="text/javascript" src="../js/dolphin.js"></script>
+    <link rel="stylesheet" href="../css/style.css" type="text/css" media="all">
+    <META name="resource-type" content="document">
+    <META name="description"
+        content="California Bay Area Used Car Listings. Ata Car Licensed Bonded and Insured Auto Brokers. 1446 Mazda Drive Walnut Creek, CA 94597 We Are A Small Family Operated Dealership With Over 10 Years In Business That Is Why You Get These Savings Versus Going To A Bigger Dealership And Paying More MONEY">
+</head>
+
+<body>
+
+    <div class="header">
+        <a href="../index.html"><img src="../images/atalogo.jpg" alt="Ata Car Home" border="0" /></a>
+    </div>
+
+    <div id="dolphincontainer">
+        <div id="dolphinnav">
+
+            <ul>
+                <li><a href="../index.html"><span>Current Inventory</span> </a></li>
+                <li><a href="../sold.html"><span>Sold</span></a></li>
+                <li><a href="../export.html"><span>Additional Services</span></a></li>
+                <li><a href="../repair.html"><span>Repair Services</span></a></li>
+                <li><a href="../loancalc.html"><span>Loan Calculator</span></a></li>
+                <li><a href="../aboutus.html"><span>About Us</span></a></li>
+                <li><a href="../contactus.html"><span>Contact Us</span></a></li>
+            </ul>
+
+        </div>
+    </div>
+
+
+    <center>
+        <h2>{{ item.year }} {{ item.make }} {{ item.model }}</h2>
+        <span style="padding: 5 50 5 50px; margin: 5 5 5 5px; border: solid 1px #b11302; text-align: center;
+                color: #fff; background-color: #4c4c4c;">
+            <b>Price:</b> {{ item.price }} &nbsp;|&nbsp;
+            <b>Mileage:</b> {{ item.mileage }} &nbsp;|&nbsp;
+            <b>VIN:</b> {{ item.vin }} </span>
+    </center>
+    <div style="margin: 10 10 10 10px;">
+        {{ item.description }}
+    </div>
+
+    <div id="footer">
+        Copyright ©
+        <script type="text/javascript">var theDate = new Date(); document.write(theDate.getFullYear());</script>
+        Ata Car. All rights reserved. Licensed Bonded and Insured Auto Brokers.
+        <br>
+        1437 Mazda Drive, Walnut Creek, CA 94597
+        <br>
+        <a href="mailto:tomask@atacar.net">Tomas</a> (925) 765-0648
+        <br>
+        <br>
+
+    </div>
+
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script src="http://www.google-analytics.com/ga.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        var pageTracker = _gat._getTracker("UA-5229945-2");
+        pageTracker._trackPageview();
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,130 @@
+<html>
+
+<head>
+	<title>Ata Car</title>
+	<script type="text/javascript" src="js/dolphin.js"></script>
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="all">
+	<META name="resource-type" content="document">
+	<META name="description"
+		content="California Bay Area Used Car Listings. Ata Car Licensed Bonded and Insured Auto Brokers. 1446 Mazda Drive Walnut Creek, CA 94597 We Are A Small Family Operated Dealership With Over 10 Years In Business That Is Why You Get These Savings Versus Going To A Bigger Dealership And Paying More MONEY">
+</head>
+
+<body>
+
+	<div class="header">
+		<a href="index.html"><img src="images/atalogo.jpg" alt="Ata Car Home" border="0" /></a>
+	</div>
+
+	<div id="dolphincontainer">
+		<div id="dolphinnav">
+
+			<ul>
+				<li><a href="index.html"><span>Current Inventory</span> </a></li>
+				<li><a href="sold.html"><span>Sold</span></a></li>
+				<li><a href="export.html"><span>Additional Services</span></a></li>
+				<li><a href="repair.html"><span>Repair Services</span></a></li>
+				<li><a href="loancalc.html"><span>Loan Calculator</span></a></li>
+				<li><a href="aboutus.html"><span>About Us</span></a></li>
+				<li><a href="contactus.html"><span>Contact Us</span></a></li>
+			</ul>
+
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		dolphintabs.init("dolphinnav", 4);
+	</script>
+	<style>
+		.lc {
+			font-size: 12px;
+			height: 18px;
+			width: 60px;
+			background-color: #FFFFFF;
+		}
+	</style>
+	<center>
+		<div class="textContent">
+			<div style="text-align: left; padding-left: 125px; padding-top: 15px;">
+				<form method="post" action="loancalc.php.html" name="repayment">
+
+					<input type="text" name="amt" class="lc" value="$" /> Loan Amount
+					<br />
+					<input type="text" name="interest" maxlength="4" class="lc" value="%" /> Interest Rate
+					<br />
+					<input type="text" name="term" maxlength="1" class="lc" /> Years
+					<br />
+					<div style="padding-left: 25px; padding-top: 10px;">
+						<input type="button" onclick="calc()" name="calculate" value="Calculate" />
+					</div>
+					<br />
+					<input type="text" name="monthly" class="lc" value="$" readonly /> <b>Monthly Payment</b>
+				</form>
+			</div>
+			<div style="font-style: italic; font-size: 10px;">
+				All advertised prices exclude government fees and taxes, any finance charges, any dealer document
+				preparation charge, and any emission testing charge. Vehicles are subject to prior sale. All advertised
+				to be true but not guaranteed. We assume no liability for errors or omissions.
+			</div>
+		</div>
+	</center>
+	<script type="text/javascript">
+		function replaceAll(str, searchTerm, replaceWith, ignoreCase) {
+			var regex = "/" + searchTerm + "/g";
+			if (ignoreCase) regex += "i";
+			return str.replace(eval(regex), replaceWith);
+		}
+
+		function trim(str) {
+			return str.replace(/^\s+|\s+$/g, '');
+		}
+
+		function calc() {
+			f = document.repayment;
+			amt = trim(f.amt.value);
+			amt = replaceAll(amt, '\\$', '', false);
+			amt = replaceAll(amt, ',', '', false);
+			interest = trim(f.interest.value);
+			interest = replaceAll(interest, '%', '', false);
+			annual_int = interest / 100;
+			term = trim(f.term.value);
+			monthly = annual_int / 12;
+			monthly_pay = Math.floor((amt * monthly) / (1 - Math.pow((1 + monthly), (-1 * term * 12))) * 100) / 100;
+			f.monthly.value = currency(monthly_pay);
+		}
+
+		function currency(num) {
+			var dollars = Math.floor(num);
+			for (var i = 0; i < num.length; i++) {
+				if (num.charAt(i) == ".")
+					break;
+			}
+			var cents = "" + Math.round(num * 100);
+			cents = cents.substring(cents.length - 2, cents.length);
+			return ("$" + dollars + "." + cents)
+		}
+	</script>
+	<div id="footer">
+		Copyright &copy;
+		<script type="text/javascript">var theDate = new Date(); document.write(theDate.getFullYear());</script> Ata Car.
+		All rights reserved. Licensed Bonded and Insured Auto Brokers.
+		<br />
+		1437 Mazda Drive, Walnut Creek, CA 94597
+		<br />
+		<a href="mailto:tomask@atacar.net">Tomas</a> (925) 765-0648
+		<br />
+		<br />
+
+	</div>
+
+	<script type="text/javascript">
+		var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+		document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+	</script>
+	<script type="text/javascript">
+		var pageTracker = _gat._getTracker("UA-5229945-2");
+		pageTracker._trackPageview();
+	</script>
+
+</body>
+
+</html>
